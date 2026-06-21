@@ -6,6 +6,8 @@ paginate: true
 
 <!-- _class: title -->
 
+![bg opacity:0.3](../assets/course-cover-02.png)
+
 # 认知四层跃迁模型
 
 ## 企业AI转型的底层心法
@@ -37,6 +39,8 @@ SuperME 超级个体方法论 · 企业内训
 
 ---
 
+![bg right:40%](../assets/methodology-fourlayer.png)
+
 # 四层认知跃迁模型
 
 | 层级 | 名称 | 核心 | 状态 |
@@ -51,6 +55,8 @@ SuperME 超级个体方法论 · 企业内训
 ---
 
 <!-- _class: section-break -->
+
+![bg opacity:0.2](../assets/slide-attachment.png)
 
 # 第一层：我执
 ## 你在执着什么？
@@ -112,6 +118,8 @@ SuperME 超级个体方法论 · 企业内训
 ---
 
 <!-- _class: section-break -->
+
+![bg opacity:0.2](../assets/slide-ignorance.png)
 
 # 第二层：无明
 ## 你不知道自己不知道什么
@@ -183,6 +191,8 @@ SuperME 超级个体方法论 · 企业内训
 
 <!-- _class: section-break -->
 
+![bg opacity:0.2](../assets/slide-impermanence.png)
+
 # 第三层：无常
 ## 接受不确定性
 
@@ -227,6 +237,8 @@ SuperME 超级个体方法论 · 企业内训
 ---
 
 <!-- _class: section-break -->
+
+![bg opacity:0.2](../assets/slide-interdependence.png)
 
 # 第四层：缘起性空
 ## AI成为你的一部分
@@ -277,6 +289,8 @@ SuperME 超级个体方法论 · 企业内训
 ---
 
 # 🎯 核心互动：松弛 vs 我执 对照实验
+
+![bg right:45%](../assets/slide-relaxed-experiment.png)
 
 全场分为两组，用同一个AI解决同一个问题：
 

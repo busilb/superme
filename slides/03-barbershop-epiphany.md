@@ -6,6 +6,8 @@ paginate: true
 
 <!-- _class: title -->
 
+![bg opacity:0.3](../assets/course-cover-03.png)
+
 # 理发店顿悟
 
 ## AI场景发现的标准化教学案例
@@ -41,6 +43,8 @@ SuperME 超级个体方法论 · 教学案例
 
 ---
 
+![bg right:40%](../assets/slide-confusion.png)
+
 # 迷茫的一周
 
 2026年3月，布斯在老板要求下安装了AI工具
@@ -73,6 +77,8 @@ SuperME 超级个体方法论 · 教学案例
 ## 转折
 
 ---
+
+![bg right:40%](../assets/case-barbershop.png)
 
 # 咸宁老街的理发店
 
@@ -155,6 +161,8 @@ AI **主动** 延伸了任务
 
 ---
 
+![bg right:40%](../assets/slide-three-responses.png)
+
 # 三重能力跃迁
 
 | 层级 | AI做了什么 | 超出预期？ |
@@ -225,6 +233,8 @@ AI **主动** 延伸了任务
 
 ---
 
+![bg right:40%](../assets/slide-curiosity.png)
+
 # 教训4：好奇心是最好的Prompt
 
 布斯没有用任何"prompt技巧"
@@ -245,6 +255,8 @@ AI **主动** 延伸了任务
 ## 现场实操
 
 ---
+
+![bg right:40%](../assets/slide-your-moment.png)
 
 # 🎯 动手环节：找到你的"理发店时刻"
 
@@ -287,6 +299,8 @@ AI **主动** 延伸了任务
 
 ---
 
+![bg right:40%](../assets/case-homework.png)
+
 # 延伸案例：女儿的错题本
 
 **场景**：辅导作业总是吵架
@@ -303,6 +317,8 @@ AI **主动** 延伸了任务
 **AI改善的不只是效率，还有关系**
 
 ---
+
+![bg right:40%](../assets/case-resume.png)
 
 # 延伸案例：女儿的转学简历
 

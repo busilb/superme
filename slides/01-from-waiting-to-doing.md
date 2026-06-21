@@ -6,6 +6,8 @@ paginate: true
 
 <!-- _class: title -->
 
+![bg opacity:0.3](../assets/course-cover-01.png)
+
 # 从等排期到自己搞定
 
 ## 一个零代码运营的AI超级个体之路
@@ -36,6 +38,8 @@ SuperME 超级个体方法论 · 付费课程
 
 ---
 
+![bg right:35%](../assets/slide-soul-questions.png)
+
 # 灵魂三问
 
 请举手：
@@ -56,6 +60,8 @@ SuperME 超级个体方法论 · 付费课程
 ## 我的故事
 
 ---
+
+![bg right:35%](../assets/slide-identity-tags.png)
 
 # 三个身份标签
 
@@ -86,6 +92,8 @@ SuperME 超级个体方法论 · 付费课程
 > "心态平和了很多，没有了那么多的不甘。"
 
 ---
+
+![bg right:40%](../assets/case-barbershop.png)
 
 # 理发店顿悟
 
@@ -121,6 +129,8 @@ SuperME 超级个体方法论 · 付费课程
 **教训**：AI应用不需要宏大场景。从身边最小的问题开始。
 
 ---
+
+![bg right:40%](../assets/slide-first-principles.png)
 
 # 第一性思维
 
@@ -179,6 +189,8 @@ SuperME 超级个体方法论 · 付费课程
 
 ---
 
+![bg right:40%](../assets/slide-tool-map.png)
+
 # 非技术人的工具选择
 
 | 阶段 | 工具 | 一句话定位 |
@@ -212,6 +224,8 @@ SuperME 超级个体方法论 · 付费课程
 
 ---
 
+![bg right:40%](../assets/case-website.png)
+
 # AIBTI 网站搭建全过程
 
 | 时间 | 做了什么 | 认知突破 |
@@ -243,6 +257,8 @@ SuperME 超级个体方法论 · 付费课程
 
 ---
 
+![bg right:40%](../assets/case-groupchat.png)
+
 # 真实工作场景：商家群聊分析
 
 **痛点1：被客户骂**
@@ -263,6 +279,8 @@ SuperME 超级个体方法论 · 付费课程
 ## 五个真实变化
 
 ---
+
+![bg right:40%](../assets/slide-five-changes.png)
 
 # AI 改变了什么？
 
