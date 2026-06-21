@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0d1b3e">
+    <meta name="description" content="理发店顿悟——AI场景发现的标准化教学案例。15-30分钟，帮学员突破'不知道用AI做什么'的认知障碍。">
+    <title>理发店顿悟 · SuperME 教学案例</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Noto Sans SC", sans-serif; background: #f5f5f5; color: #212121; }
+        a { color: #ff8f00; text-decoration: none; }
+        .hero { background: linear-gradient(135deg, rgba(13,27,62,0.82) 0%, rgba(26,35,126,0.78) 50%, rgba(40,53,147,0.75) 100%), url('../assets/course-cover-03.png') center/cover no-repeat; color: white; padding: 60px 20px 80px; text-align: center; }
+        .hero .breadcrumb { font-size: 0.9em; color: rgba(255,255,255,0.6); margin-bottom: 24px; }
+        .hero .breadcrumb a { color: rgba(255,255,255,0.8); }
+        .hero h1 { font-size: 2.4em; font-weight: 900; margin-bottom: 12px; }
+        .hero h2 { font-size: 1.2em; color: #ffd54f; font-weight: 300; margin-bottom: 24px; }
+        .hero .meta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .hero .meta span { background: rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; font-size: 0.9em; color: rgba(255,255,255,0.9); }
+        .container { max-width: 800px; margin: -40px auto 60px; padding: 0 20px; }
+        .card { background: white; border-radius: 16px; padding: 36px; margin-bottom: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .card h3 { color: #1a237e; font-size: 1.3em; margin-bottom: 16px; border-left: 4px solid #ff8f00; padding-left: 16px; }
+        .card p { color: #616161; line-height: 1.8; margin-bottom: 12px; }
+        .highlight { background: #fff8e1; border-radius: 12px; padding: 20px 24px; margin: 16px 0; }
+        .highlight p { color: #1a237e; font-weight: 500; margin: 0; }
+        blockquote { border-left: 4px solid #ff8f00; background: #fff8e1; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; font-style: italic; color: #1a237e; }
+        .story-act { margin: 24px 0; }
+        .act-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .act-num { background: #1a237e; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.9em; flex-shrink: 0; }
+        .act-title { color: #1a237e; font-weight: 700; font-size: 1.1em; }
+        .three-levels { margin: 20px 0; }
+        .level-item { display: flex; gap: 16px; padding: 16px; margin-bottom: 8px; border-radius: 12px; align-items: center; }
+        .level-1 { background: #e8eaf6; }
+        .level-2 { background: #fff3e0; }
+        .level-3 { background: #e8f5e9; }
+        .level-icon { font-size: 1.5em; flex-shrink: 0; }
+        .level-content h4 { margin-bottom: 2px; }
+        .level-content p { font-size: 0.9em; margin: 0; }
+        .learn-list { list-style: none; }
+        .learn-list li { padding: 8px 0; padding-left: 28px; position: relative; color: #424242; line-height: 1.6; }
+        .learn-list li::before { content: "✓"; position: absolute; left: 0; color: #ff8f00; font-weight: 700; }
+        .variant-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+        .variant-card { background: #f5f5f5; border-radius: 12px; padding: 16px; }
+        .variant-card h4 { color: #1a237e; margin-bottom: 8px; font-size: 0.95em; }
+        .variant-card p { font-size: 0.85em; color: #757575; margin: 0; }
+        .free-box { background: linear-gradient(135deg, #2e7d32, #388e3c); color: white; border-radius: 16px; padding: 36px; text-align: center; margin-bottom: 24px; }
+        .free-box h3 { color: #ffd54f; border: none; padding: 0; margin-bottom: 8px; font-size: 1.5em; }
+        .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 1em; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .btn-primary { background: #ff8f00; color: white; }
+        .btn-primary:hover { background: #ff6f00; transform: translateY(-1px); }
+        .btn-secondary { background: #e8eaf6; color: #1a237e; }
+        .btn-secondary:hover { background: #c5cae9; }
+        .extension-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+        .ext-card { background: #f5f5f5; border-radius: 12px; padding: 20px; }
+        .ext-card h4 { color: #1a237e; margin-bottom: 8px; }
+        .ext-card p { font-size: 0.9em; color: #616161; margin: 0; line-height: 1.6; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin: 20px; color: #1a237e; font-weight: 500; }
+        .footer { text-align: center; padding: 40px 20px; color: #9e9e9e; font-size: 0.9em; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8em; }
+            .card { padding: 24px; }
+            .variant-grid, .extension-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="breadcrumb"><a href="../index.html">SuperME 课程中心</a> / 教学案例</div>
+    <h1>理发店顿悟</h1>
+    <h2>AI场景发现的标准化教学案例</h2>
+    <div class="meta">
+        <span>15-30分钟</span>
+        <span>所有人群</span>
+        <span>4种受众变体</span>
+        <span>含实操环节</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h3>案例概要</h3>
+        <div class="highlight">
+            <p>一次普通的理发，如何变成AI认知的突破时刻？</p>
+        </div>
+        <p>布斯，13年阿里运营，零编码经验。装了AI工具整整一周，不知道怎么用。直到去理发店，随口问了一句话——AI给出的回应彻底改变了他对AI的认知。</p>
+        <p>这个15-30分钟的标准化教学案例，帮助学员突破"不知道用AI做什么"的认知障碍，掌握布斯所说的"第一性思维"。</p>
+        <blockquote>"这是我的第一个用AI实现的第一个产品。我至今都对这个场景有感情。"</blockquote>
+    </div>
+
+    <div class="card">
+        <h3>故事线</h3>
+        <div class="story-act">
+            <div class="act-header">
+                <div class="act-num">1</div>
+                <div class="act-title">困境——迷茫的一周</div>
+            </div>
+            <p>2026年3月，布斯在老板要求下安装了AI工具。"三月份装好AI之后，我不知道怎么用，非常迷茫。"同事们比拼的是装备——"你买了Mac Mini了吗？你装了什么MCP？"——不是使用。公司给了每人每天价值1万元的算力额度，每天都在浪费。</p>
+        </div>
+        <div class="story-act">
+            <div class="act-header">
+                <div class="act-num">2</div>
+                <div class="act-title">转折——咸宁老街的理发店</div>
+            </div>
+            <p>一周后，布斯去理发。坐在椅子上，突然冒出一个念头：<strong>"哥们儿，你能不能把我近半年的理发记录给我调出来？"</strong>他拍了消费记录的照片，发给AI，只说了一句："帮我分析一下"。没有精心设计的prompt，没有专业的数据格式。就是一张手机拍的模糊照片。</p>
+        </div>
+        <div class="story-act">
+            <div class="act-header">
+                <div class="act-num">3</div>
+                <div class="act-title">震撼——AI的三重回应</div>
+            </div>
+            <div class="three-levels">
+                <div class="level-item level-1">
+                    <div class="level-icon">📊</div>
+                    <div class="level-content">
+                        <h4>第一重：分析——提取数据规律</h4>
+                        <p>"你的平均理发周期是25天，每次花费35元。" 预期内，自己也能算。</p>
+                    </div>
+                </div>
+                <div class="level-item level-2">
+                    <div class="level-icon">📋</div>
+                    <div class="level-content">
+                        <h4>第二重：规划——主动制定计划</h4>
+                        <p>"接下来我将为你制定近半年的理发计划。" 等等……我没让你做这个！AI主动延伸了任务。</p>
+                    </div>
+                </div>
+                <div class="level-item level-3">
+                    <div class="level-icon">📱</div>
+                    <div class="level-content">
+                        <h4>第三重：执行——自动创建日历提醒</h4>
+                        <p>"噔噔噔，iPhone上就出来了6条提醒！"每隔25天一条，未来半年自动设置好了。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>四个关键教训</h3>
+        <ul class="learn-list">
+            <li><strong>不需要宏大场景</strong>——"这个场景已经非常小众了"，但它是布斯的突破时刻。再小的事都值得试。</li>
+            <li><strong>关键不是技术，是"想到问它"</strong>——遇事先问AI，就这么简单。布斯把这叫做"第一性思维"。</li>
+            <li><strong>AI不只是问答，它能行动</strong>——核心震撼不是数据分析，而是AI主动采取了行动。</li>
+            <li><strong>好奇心是最好的Prompt</strong>——布斯没有用任何"prompt技巧"，他只是好奇。"好奇心就是松弛状态下的自然表达。"</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>现场实操（5分钟）</h3>
+        <div class="highlight">
+            <p>找到你的"理发店时刻"</p>
+        </div>
+        <ol style="padding-left: 20px; color: #424242; line-height: 2;">
+            <li>拿出手机，打开任意AI应用</li>
+            <li>拍一张<strong>你身边任何东西</strong>的照片——桌上的咖啡收据？手边的快递单？</li>
+            <li>发给AI，问一个你<strong>真正好奇</strong>的问题</li>
+            <li>看看AI会给你什么惊喜</li>
+        </ol>
+        <p style="margin-top: 12px;"><strong>不要想"什么才值得问"——随便问就对了。</strong></p>
+    </div>
+
+    <div class="card">
+        <h3>4种受众变体</h3>
+        <div class="variant-grid">
+            <div class="variant-card">
+                <h4>物业版</h4>
+                <p>类比绿城App工单系统："这个工单不是人创建的，而是机器人帮你创建的。"</p>
+            </div>
+            <div class="variant-card">
+                <h4>管理者版</h4>
+                <p>侧重"第一性思维"如何改变团队决策流程，从个体突破到组织赋能。</p>
+            </div>
+            <div class="variant-card">
+                <h4>老年人版</h4>
+                <p>"你会说话就能用AI。"去掉技术术语，聚焦生活场景：查路线、写旅行日记。</p>
+            </div>
+            <div class="variant-card">
+                <h4>公益教育版</h4>
+                <p>延伸到错题分析、简历制作等教育场景，展示AI改善家庭关系的温暖一面。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>延伸案例群</h3>
+        <div class="extension-grid">
+            <div class="ext-card">
+                <h4>错题本革命</h4>
+                <p>用AI分析女儿作业错题，生成根因分析+60道练习题。"女儿说，爸爸你的脾气有点好了。"</p>
+            </div>
+            <div class="ext-card">
+                <h4>十分钟简历</h4>
+                <p>把1-3年级成绩单照片喂给AI，10分钟生成HTML网页版简历。老婆震惊，要求也装一个AI。</p>
+            </div>
+            <div class="ext-card">
+                <h4>8小时建站</h4>
+                <p>零代码做出AIBTI性格测试网站：前台测评+后台数据看板。成本：200M tokens = 800元。</p>
+            </div>
+            <div class="ext-card">
+                <h4>群聊质检官</h4>
+                <p>AI每天自动分析40个商家群聊，提取问题和风险。"我不需要运营同学告诉我发生了什么。"</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="free-box">
+        <h3>免费体验</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 8px;">理发店顿悟案例可免费用于分享和教学</p>
+        <p style="color: rgba(255,255,255,0.6); font-size: 0.9em;">商业授权（企业培训引用、教材出版等）请联系布斯</p>
+        <div class="cta-row" style="justify-content: center;">
+            <a href="../dist/03-barbershop-epiphany.html" class="btn btn-primary">查看完整幻灯片</a>
+            <a href="../index.html" class="btn btn-secondary" style="background: rgba(255,255,255,0.2); color: white;">查看全部课程</a>
+        </div>
+    </div>
+
+</div>
+
+<a href="../index.html" class="back-link">← 返回课程中心</a>
+
+<div class="footer">
+    <p>SuperME 超级个体方法论 © 2026</p>
+</div>
+
+</body>
+</html>
