@@ -1,0 +1,6 @@
+superme_site.tar.gz
+superme_files.tar.gz
+superme.bundle
+push_to_github.sh
+.image_process/
+.DS_Store
