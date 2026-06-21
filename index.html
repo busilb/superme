@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperME 超级个体方法论 · 课程中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: "Noto Sans SC", sans-serif;
+            background: #f5f5f5;
+            color: #212121;
+            min-height: 100vh;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0d1b3e 0%, #1a237e 50%, #283593 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3em;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        .hero h1 span { color: #ffd54f; }
+        .hero p {
+            font-size: 1.3em;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .hero .tagline {
+            margin-top: 24px;
+            font-size: 1em;
+            color: #ff8f00;
+            font-weight: 500;
+        }
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 36px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .card-number {
+            background: linear-gradient(135deg, #1a237e, #283593);
+            color: white;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4em;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+        .card h2 {
+            font-size: 1.5em;
+            color: #1a237e;
+            font-weight: 700;
+        }
+        .card h3 {
+            font-size: 1em;
+            color: #757575;
+            font-weight: 400;
+            margin-top: 4px;
+        }
+        .card p {
+            color: #616161;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .card-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .meta-tag {
+            background: #e8eaf6;
+            color: #1a237e;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+        .card-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+        .btn-primary {
+            background: #ff8f00;
+            color: white;
+        }
+        .btn-primary:hover { background: #ff6f00; }
+        .btn-secondary {
+            background: #e8eaf6;
+            color: #1a237e;
+        }
+        .btn-secondary:hover { background: #c5cae9; }
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #9e9e9e;
+            font-size: 0.9em;
+        }
+        .footer a { color: #ff8f00; text-decoration: none; }
+        .quote-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: #fff8e1;
+        }
+        .quote-section blockquote {
+            font-size: 1.4em;
+            color: #1a237e;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        .quote-section .author {
+            margin-top: 16px;
+            color: #ff8f00;
+            font-weight: 500;
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+            .hero p { font-size: 1em; }
+            .card { padding: 24px; }
+            .card h2 { font-size: 1.2em; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <h1>Super<span>ME</span></h1>
+    <p>超级个体方法论 · 课程中心</p>
+    <div class="tagline">认知 → 实践 → 分享 → 商业化 → 赋能</div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-number">01</div>
+            <div>
+                <h2>从等排期到自己搞定</h2>
+                <h3>一个零代码运营的AI超级个体之路</h3>
+            </div>
+        </div>
+        <p>从13年阿里运营被裁，到8小时用AI从零做出完整网站。布斯用亲身经历告诉你：不需要会写代码，只需要改变一个认知——遇事先问AI。</p>
+        <div class="card-meta">
+            <span class="meta-tag">2小时付费课</span>
+            <span class="meta-tag">30页幻灯片</span>
+            <span class="meta-tag">非技术人群</span>
+        </div>
+        <div class="card-actions">
+            <a href="dist/01-from-waiting-to-doing.html" class="btn btn-primary">▶ 在线演示</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-number">02</div>
+            <div>
+                <h2>认知四层跃迁模型</h2>
+                <h3>企业AI转型的底层心法</h3>
+            </div>
+        </div>
+        <p>融合佛学智慧（我执→无明→无常→缘起性空）与AI实践的认知框架。不教工具操作，专攻企业AI转型中的心理障碍和认知瓶颈——解决"工具学了但用不起来"的根本问题。</p>
+        <div class="card-meta">
+            <span class="meta-tag">企业内训</span>
+            <span class="meta-tag">半天/全天</span>
+            <span class="meta-tag">管理者 & HR</span>
+        </div>
+        <div class="card-actions">
+            <a href="dist/02-cognitive-four-layers.html" class="btn btn-primary">▶ 在线演示</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-number">03</div>
+            <div>
+                <h2>理发店顿悟</h2>
+                <h3>AI场景发现的标准化教学案例</h3>
+            </div>
+        </div>
+        <p>一次普通的理发，如何变成AI认知的突破时刻？这个15-30分钟的标准化教学案例，帮助学员突破"不知道用AI做什么"的认知障碍，掌握"第一性思维"。</p>
+        <div class="card-meta">
+            <span class="meta-tag">教学案例</span>
+            <span class="meta-tag">15-30分钟</span>
+            <span class="meta-tag">所有人群</span>
+        </div>
+        <div class="card-actions">
+            <a href="dist/03-barbershop-epiphany.html" class="btn btn-primary">▶ 在线演示</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="quote-section">
+    <blockquote>
+        "好奇心就是松弛状态下的自然表达。"
+    </blockquote>
+    <div class="author">—— 布斯 · SuperME 超级个体方法论</div>
+</div>
+
+<div class="footer">
+    <p>SuperME 超级个体方法论 © 2026 | <a href="https://github.com/busilb/superme">GitHub</a></p>
+    <p style="margin-top: 8px;">基于 457 条钉钉听记提炼而成 · 持续更新中</p>
+</div>
+
+</body>
+</html>
