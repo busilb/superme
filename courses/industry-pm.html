@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0f1629">
+    <meta name="description" content="产品经理AI协作方案——PRD效率提升10倍，AI辅助完成率95%+，需求评审自动化分析。">
+    <title>产品经理AI协作 · SuperME 行业方案</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Inter", "Noto Sans SC", sans-serif; background: #f5f5f5; color: #212121; }
+        a { color: #3b82f6; text-decoration: none; }
+        .hero {
+            background: linear-gradient(135deg, rgba(59,130,246,0.92) 0%, rgba(99,102,241,0.88) 100%),
+                        url('../assets/industry-pm.png') center/cover no-repeat;
+            color: white; padding: 60px 20px 80px; text-align: center;
+        }
+        .hero .breadcrumb { font-size: 0.9em; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+        .hero .breadcrumb a { color: rgba(255,255,255,0.9); }
+        .hero h1 { font-size: 2.4em; font-weight: 900; margin-bottom: 12px; }
+        .hero h2 { font-size: 1.2em; color: rgba(255,255,255,0.85); font-weight: 300; margin-bottom: 24px; }
+        .hero .meta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .hero .meta span {
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); padding: 6px 16px; border-radius: 20px;
+            font-size: 0.9em; color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2);
+        }
+        .container { max-width: 800px; margin: -40px auto 60px; padding: 0 20px; }
+        .card {
+            background: white; border-radius: 18px; padding: 36px; margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+        .card h3 { color: #1a1f36; font-size: 1.3em; margin-bottom: 16px; border-left: 4px solid #3b82f6; padding-left: 16px; }
+        .card p { color: #616161; line-height: 1.8; margin-bottom: 12px; }
+        .highlight { background: #eff6ff; border-radius: 14px; padding: 20px 24px; margin: 16px 0; }
+        .highlight p { color: #1e40af; font-weight: 500; margin: 0; }
+        .hero-img { max-width: 100%; border-radius: 18px; margin: -40px auto 24px; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+        .metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+        .metric-card {
+            text-align: center; padding: 20px 12px; background: linear-gradient(135deg, #eff6ff, #eef2ff);
+            border-radius: 14px;
+        }
+        .metric-card .num { font-size: 2em; font-weight: 900; color: #4f46e5; }
+        .metric-card .label { font-size: 0.82em; color: #78716c; margin-top: 4px; }
+        .workflow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+        .workflow-card {
+            background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 20px;
+        }
+        .workflow-card h4 { color: #1a1f36; font-size: 0.95em; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .workflow-card h4 .icon { font-size: 1.2em; }
+        .workflow-card p { font-size: 0.88em; color: #64748b; margin: 0; line-height: 1.6; }
+        .learn-list { list-style: none; }
+        .learn-list li { padding: 8px 0; padding-left: 28px; position: relative; color: #424242; line-height: 1.6; }
+        .learn-list li::before { content: "\2713"; position: absolute; left: 0; color: #3b82f6; font-weight: 700; }
+        blockquote {
+            border-left: 4px solid #3b82f6; background: #eff6ff; padding: 16px 20px;
+            margin: 16px 0; border-radius: 0 10px 10px 0; font-style: italic; color: #1a1f36;
+        }
+        .price-box {
+            background: linear-gradient(135deg, #3b82f6, #6366f1); color: white;
+            border-radius: 18px; padding: 36px; text-align: center; margin-bottom: 24px;
+        }
+        .price-box h3 { color: rgba(255,255,255,0.9); border: none; padding: 0; margin-bottom: 8px; }
+        .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; justify-content: center; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+            border-radius: 10px; font-size: 1em; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .btn-primary { background: white; color: #4f46e5; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+        .btn-secondary { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin: 20px; color: #1a1f36; font-weight: 500; }
+        .footer { text-align: center; padding: 40px 20px; color: #9e9e9e; font-size: 0.9em; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8em; }
+            .card { padding: 24px; }
+            .workflow-grid { grid-template-columns: 1fr; }
+            .metrics-row { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="breadcrumb"><a href="../index.html">SuperME — AI认知赋能</a> / 行业方案</div>
+    <h1>产品经理AI协作</h1>
+    <h2>PRD撰写 · 需求评审 · 竞品分析 · 效率提升10倍</h2>
+    <div class="meta">
+        <span>PRD撰写</span>
+        <span>需求评审</span>
+        <span>竞品分析</span>
+        <span>AI辅助95%+</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <img src="../assets/industry-pm.png" alt="产品经理AI协作" class="hero-img">
+
+    <div class="card">
+        <h3>产品经理的AI痛点</h3>
+        <div class="highlight">
+            <p>大部分产品经理的时间花在"写"上——写PRD、写评审文档、写竞品报告、写周报。AI可以把这些时间压缩到原来的1/10，让产品经理回归"思考"本身。</p>
+        </div>
+        <p>传统的PRD撰写需要2-3天，涉及需求梳理、逻辑结构、交互说明、接口定义等多个环节。AI辅助可以在30分钟内完成初稿，产品经理只需要微调和确认。</p>
+    </div>
+
+    <div class="card">
+        <h3>核心能力</h3>
+        <div class="workflow-grid">
+            <div class="workflow-card">
+                <h4><span class="icon">📝</span> PRD智能撰写</h4>
+                <p>输入需求描述，AI自动生成完整PRD文档，包括背景分析、功能需求、交互设计、数据埋点方案。完成率95%+。</p>
+            </div>
+            <div class="workflow-card">
+                <h4><span class="icon">🔍</span> 需求评审自动化</h4>
+                <p>AI自动审查PRD完整性、逻辑一致性、接口规范性，输出评审意见和改进建议。</p>
+            </div>
+            <div class="workflow-card">
+                <h4><span class="icon">📊</span> 竞品分析报告</h4>
+                <p>输入竞品名称或链接，AI自动抓取信息、对比功能差异、生成结构化分析报告。</p>
+            </div>
+            <div class="workflow-card">
+                <h4><span class="icon">📈</span> 数据分析辅助</h4>
+                <p>将数据报表导入AI，自动发现趋势、异常、相关性，输出可直接使用的分析结论。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>实战成果</h3>
+        <div class="metrics-row">
+            <div class="metric-card">
+                <div class="num">95%</div>
+                <div class="label">PRD AI辅助完成率</div>
+            </div>
+            <div class="metric-card">
+                <div class="num">10x</div>
+                <div class="label">PRD撰写效率提升</div>
+            </div>
+            <div class="metric-card">
+                <div class="num">580</div>
+                <div class="label">等价人力天产出</div>
+            </div>
+        </div>
+        <blockquote>"最近的一个PRD，AI完成率达到95%到98%了。我只是人工微调了一下。"<br><small>—— 基伟，供应链产品经理</small></blockquote>
+    </div>
+
+    <div class="card">
+        <h3>适用场景</h3>
+        <ul class="learn-list">
+            <li>B端/C端产品经理的日常PRD撰写</li>
+            <li>技术方案评审前的自动化预检查</li>
+            <li>季度/年度竞品分析报告生成</li>
+            <li>产品数据月报/周报自动化</li>
+            <li>新人PM的PRD写作能力快速提升</li>
+            <li>跨团队需求对齐和评审提效</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>培训内容</h3>
+        <ul class="learn-list">
+            <li><strong>模块一</strong>：AI辅助PRD撰写实操（从需求到完整文档30分钟）</li>
+            <li><strong>模块二</strong>：需求评审自动化工作流搭建</li>
+            <li><strong>模块三</strong>：竞品分析AI方法论</li>
+            <li><strong>模块四</strong>：产品经理的AI工具链搭建</li>
+        </ul>
+    </div>
+
+    <div class="price-box">
+        <h3>咨询方案</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">帮助产品团队快速掌握AI协作方法论</p>
+        <div class="cta-row">
+            <a href="../index.html#booking" class="btn btn-primary">预约咨询</a>
+            <a href="../index.html#industries" class="btn btn-secondary">查看其他方案</a>
+        </div>
+    </div>
+
+</div>
+
+<a href="../index.html" class="back-link">&larr; 返回首页</a>
+
+<div class="footer">
+    <p>SuperME — AI认知赋能 &copy; 2026</p>
+</div>
+
+</body>
+</html>

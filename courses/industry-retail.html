@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0f1629">
+    <meta name="description" content="即时零售AI运营解决方案——活动报名自动化、群聊质检、智能选品，报名效率提升80%。">
+    <title>即时零售AI运营 · SuperME 行业方案</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Inter", "Noto Sans SC", sans-serif; background: #f5f5f5; color: #212121; }
+        a { color: #f59e0b; text-decoration: none; }
+        .hero {
+            background: linear-gradient(135deg, rgba(245,158,11,0.92) 0%, rgba(239,68,68,0.88) 100%),
+                        url('../assets/industry-retail.png') center/cover no-repeat;
+            color: white; padding: 60px 20px 80px; text-align: center;
+        }
+        .hero .breadcrumb { font-size: 0.9em; color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+        .hero .breadcrumb a { color: rgba(255,255,255,0.9); }
+        .hero h1 { font-size: 2.4em; font-weight: 900; margin-bottom: 12px; }
+        .hero h2 { font-size: 1.2em; color: rgba(255,255,255,0.85); font-weight: 300; margin-bottom: 24px; }
+        .hero .meta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .hero .meta span {
+            background: rgba(255,255,255,0.15); backdrop-filter: blur(8px); padding: 6px 16px; border-radius: 20px;
+            font-size: 0.9em; color: rgba(255,255,255,0.95); border: 1px solid rgba(255,255,255,0.2);
+        }
+        .container { max-width: 800px; margin: -40px auto 60px; padding: 0 20px; }
+        .card {
+            background: white; border-radius: 18px; padding: 36px; margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+        }
+        .card h3 { color: #1a1f36; font-size: 1.3em; margin-bottom: 16px; border-left: 4px solid #f59e0b; padding-left: 16px; }
+        .card p { color: #616161; line-height: 1.8; margin-bottom: 12px; }
+        .highlight { background: #fef3c7; border-radius: 14px; padding: 20px 24px; margin: 16px 0; }
+        .highlight p { color: #92400e; font-weight: 500; margin: 0; }
+        .hero-img { max-width: 100%; border-radius: 18px; margin: -40px auto 24px; display: block; box-shadow: 0 8px 32px rgba(0,0,0,0.15); }
+        .flow-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+        .flow-step {
+            background: #fffbeb; border: 1px solid #fde68a; border-radius: 14px; padding: 20px; text-align: center;
+        }
+        .flow-step .step-num {
+            display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #f59e0b, #ef4444); color: white; border-radius: 50%;
+            font-weight: 700; font-size: 0.9em; margin-bottom: 10px;
+        }
+        .flow-step h4 { font-size: 0.95em; color: #1a1f36; margin-bottom: 6px; }
+        .flow-step p { font-size: 0.82em; color: #78716c; margin: 0; }
+        .metrics-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 20px 0; }
+        .metric-card {
+            text-align: center; padding: 20px 12px; background: linear-gradient(135deg, #fef3c7, #fee2e2);
+            border-radius: 14px;
+        }
+        .metric-card .num { font-size: 2em; font-weight: 900; color: #dc2626; }
+        .metric-card .label { font-size: 0.82em; color: #78716c; margin-top: 4px; }
+        .platform-tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0; }
+        .platform-tag {
+            background: #fef3c7; border: 1px solid #fde68a; color: #92400e; padding: 6px 16px;
+            border-radius: 20px; font-size: 0.85em; font-weight: 600;
+        }
+        .learn-list { list-style: none; }
+        .learn-list li { padding: 8px 0; padding-left: 28px; position: relative; color: #424242; line-height: 1.6; }
+        .learn-list li::before { content: "\2713"; position: absolute; left: 0; color: #f59e0b; font-weight: 700; }
+        blockquote {
+            border-left: 4px solid #f59e0b; background: #fffbeb; padding: 16px 20px;
+            margin: 16px 0; border-radius: 0 10px 10px 0; font-style: italic; color: #1a1f36;
+        }
+        .price-box {
+            background: linear-gradient(135deg, #f59e0b, #ef4444); color: white;
+            border-radius: 18px; padding: 36px; text-align: center; margin-bottom: 24px;
+        }
+        .price-box h3 { color: rgba(255,255,255,0.9); border: none; padding: 0; margin-bottom: 8px; }
+        .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; justify-content: center; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+            border-radius: 10px; font-size: 1em; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .btn-primary { background: white; color: #dc2626; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+        .btn-secondary { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); }
+        .btn-secondary:hover { background: rgba(255,255,255,0.25); }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin: 20px; color: #1a1f36; font-weight: 500; }
+        .footer { text-align: center; padding: 40px 20px; color: #9e9e9e; font-size: 0.9em; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8em; }
+            .card { padding: 24px; }
+            .flow-steps { grid-template-columns: 1fr; }
+            .metrics-row { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="breadcrumb"><a href="../index.html">SuperME — AI认知赋能</a> / 行业方案</div>
+    <h1>即时零售AI运营</h1>
+    <h2>活动报名自动化 · 群聊质检 · 智能选品</h2>
+    <div class="meta">
+        <span>淘宝闪购</span>
+        <span>美团神价</span>
+        <span>京东到家</span>
+        <span>实战验证</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <img src="../assets/industry-retail.png" alt="即时零售AI运营" class="hero-img">
+
+    <div class="card">
+        <h3>行业痛点</h3>
+        <div class="highlight">
+            <p>即时零售运营人员每天花大量时间在重复性工作上：手动登录多个平台、逐一匹配商品成本、人工计算毛利、筛选商品报名活动——效率低、易出错、难规模化。</p>
+        </div>
+        <p>按渠道（淘宝、京东、美团）× 按城市 × 按品类的矩阵运营模式，让工作量随业务增长呈指数级上升。一个运营同学同时管理多个平台的活动报名，几乎不可能做到零遗漏。</p>
+    </div>
+
+    <div class="card">
+        <h3>解决方案</h3>
+        <ul class="learn-list">
+            <li>活动报名自动化：AI自动匹配商品成本、计算平台补贴后毛利（&gt;30%才报名）、筛选符合条件的商品</li>
+            <li>群聊质检AI：每天自动分析40+商家群聊，提取问题和风险，生成巡检报告</li>
+            <li>自动化运营日报：每日销售数据汇总、活动报名情况、库存预警、异常提醒</li>
+            <li>智能选品推荐：基于历史数据推荐高毛利商品、热门活动和优化策略</li>
+            <li>多租户平台：支持多商家、多账号隔离、权限管控</li>
+        </ul>
+        <div class="platform-tags">
+            <span class="platform-tag">淘宝闪购爆好价</span>
+            <span class="platform-tag">美团神价</span>
+            <span class="platform-tag">京东到家</span>
+            <span class="platform-tag">翱象数据接口</span>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>自动化流程</h3>
+        <div class="flow-steps">
+            <div class="flow-step">
+                <div class="step-num">1</div>
+                <h4>登录平台后台</h4>
+                <p>多账号管理<br>自动保持登录</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-num">2</div>
+                <h4>选择活动</h4>
+                <p>展示可报名活动<br>筛选活动类型</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-num">3</div>
+                <h4>导入商品成本</h4>
+                <p>批量导入数据<br>同步翱象系统</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-num">4</div>
+                <h4>计算毛利</h4>
+                <p>匹配成本+补贴<br>毛利>30%筛选</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-num">5</div>
+                <h4>筛选商品</h4>
+                <p>库存·价格·毛利<br>自定义条件</p>
+            </div>
+            <div class="flow-step">
+                <div class="step-num">6</div>
+                <h4>批量报名</h4>
+                <p>生成Excel/API提交<br>记录报名日志</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>实战成果</h3>
+        <div class="metrics-row">
+            <div class="metric-card">
+                <div class="num">80%</div>
+                <div class="label">报名效率提升</div>
+            </div>
+            <div class="metric-card">
+                <div class="num">90%</div>
+                <div class="label">人工错误率降低</div>
+            </div>
+            <div class="metric-card">
+                <div class="num">2h</div>
+                <div class="label">日省群聊质检时间</div>
+            </div>
+            <div class="metric-card">
+                <div class="num">40+</div>
+                <div class="label">商家群每日巡检</div>
+            </div>
+        </div>
+        <blockquote>"以前一个人要管3个平台的活动报名，每次都怕漏报错报。现在AI自动算毛利、筛商品、一键报名，我只需要最后确认一下就行了。"<br><small>—— 优团运营团队</small></blockquote>
+    </div>
+
+    <div class="card">
+        <h3>实施路径</h3>
+        <ul class="learn-list">
+            <li><strong>阶段一（1-2周）</strong>：选择一个店铺试点，手动导入数据，验证核心流程</li>
+            <li><strong>阶段二（2-4周）</strong>：完善功能节点，优化用户体验，增加错误处理</li>
+            <li><strong>阶段三（4-8周）</strong>：搭建多租户平台，实现账号隔离和权限管控</li>
+            <li><strong>阶段四（持续）</strong>：培训运营人员，收集反馈，扩展到更多商家</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>适用客户</h3>
+        <p>适合在淘宝闪购、美团神价、京东到家等平台开展即时零售业务的商家，尤其是：</p>
+        <ul class="learn-list">
+            <li>多平台多城市运营，活动报名工作量大</li>
+            <li>按渠道/城市/品类矩阵运营的团队</li>
+            <li>希望通过自动化降低人力成本、减少出错率</li>
+            <li>有供应链数据（成本、库存）需要整合的商家</li>
+        </ul>
+    </div>
+
+    <div class="price-box">
+        <h3>咨询方案</h3>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">我们提供从需求调研到系统搭建的全流程服务</p>
+        <div class="cta-row">
+            <a href="../index.html#booking" class="btn btn-primary">预约咨询</a>
+            <a href="../index.html#industries" class="btn btn-secondary">查看其他方案</a>
+        </div>
+    </div>
+
+</div>
+
+<a href="../index.html" class="back-link">&larr; 返回首页</a>
+
+<div class="footer">
+    <p>SuperME — AI认知赋能 &copy; 2026</p>
+</div>
+
+</body>
+</html>
