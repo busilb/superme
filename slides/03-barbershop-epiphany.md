@@ -6,13 +6,13 @@ paginate: true
 
 <!-- _class: title -->
 
-![bg opacity:0.3](../assets/course-cover-03.png)
+![bg opacity:0.25](../assets/course-cover-03.png)
 
 # 理发店顿悟
 
-## AI场景发现的标准化教学案例
+## AI场景发现的标准化教学案例 | 体验课
 
-SuperME 超级个体方法论 · 教学案例
+SuperME · AI认知赋能
 
 ---
 
@@ -390,6 +390,10 @@ AI直接操作系统（日历、邮件、应用），将计划变为现实
 
 ## 打开AI，随便问一个你好奇的问题，那就是你的第一步
 
+了解完整课程体系 · 预约企业内训 · 获取商业授权
+
+**www.superme.ai**
+
 ---
 
 <!-- _class: key-takeaway -->
@@ -398,4 +402,4 @@ AI直接操作系统（日历、邮件、应用），将计划变为现实
 
 > "AI应用的门槛不是技术，是'想到问它'。"
 >
-> —— 布斯 · SuperME 超级个体方法论
+> —— 布斯 · SuperME AI认知赋能
