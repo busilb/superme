@@ -364,6 +364,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 900px) {
   .services-grid, .why-grid, .testimonials-grid, .data-grid, .cases-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid[style*="repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
   .bio-container { flex-direction: column; text-align: center; }
   .bio-badges { justify-content: center; }
   .method-row { flex-direction: column; }
@@ -401,8 +402,8 @@ a { color: inherit; text-decoration: none; }
     <a href="#top" class="nav-brand">Super<span>ME</span></a>
     <div class="nav-links">
       <a href="#services">服务</a>
+      <a href="#industries">行业方案</a>
       <a href="#results">成果</a>
-      <a href="#methodology">方法论</a>
       <a href="#cases">案例</a>
       <a href="#speaker">关于</a>
       <a href="#booking" class="nav-cta">预约咨询</a>
@@ -422,8 +423,8 @@ a { color: inherit; text-decoration: none; }
     </div>
     <div class="stats-bar fade-in">
       <div class="stat-item"><strong>30+</strong> 服务企业/团队</div>
-      <div class="stat-item"><strong>600+</strong> 赋能个人</div>
-      <div class="stat-item"><strong>10x</strong> 平均效率提升</div>
+      <div class="stat-item"><strong>9000+</strong> 社群覆盖</div>
+      <div class="stat-item"><strong>12x</strong> PPT效率提升</div>
       <div class="stat-item"><strong>95%</strong> PRD AI辅助完成率</div>
     </div>
   </div>
@@ -556,6 +557,135 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<section class="section section-white" id="industries">
+  <div class="container">
+    <div class="section-label fade-in">INDUSTRY SOLUTIONS</div>
+    <h2 class="section-title fade-in">垂直行业解决方案</h2>
+    <p class="section-subtitle fade-in">基于200+实战案例提炼，针对不同行业的AI落地路径</p>
+    <div class="services-grid stagger" style="grid-template-columns: repeat(4, 1fr);">
+      <div class="service-card fade-in">
+        <div class="service-card-top" style="background: linear-gradient(135deg, #f59e0b, #ef4444); min-height: 140px;">
+          <div class="service-icon">🛒</div>
+          <h3>即时零售AI运营</h3>
+          <div class="service-sub">活动报名效率提升80%</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-tags">
+            <span class="service-tag">淘宝闪购</span>
+            <span class="service-tag">美团神价</span>
+          </div>
+          <ul class="service-bullets">
+            <li>活动报名自动化（毛利计算+智能选品）</li>
+            <li>群聊质检AI（40+商家群每日巡检）</li>
+            <li>自动化运营日报</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">咨询方案</a>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-top" style="background: linear-gradient(135deg, #3b82f6, #6366f1); min-height: 140px;">
+          <div class="service-icon">📋</div>
+          <h3>产品经理AI协作</h3>
+          <div class="service-sub">PRD效率提升10倍</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-tags">
+            <span class="service-tag">PRD撰写</span>
+            <span class="service-tag">需求评审</span>
+          </div>
+          <ul class="service-bullets">
+            <li>AI辅助PRD完成率95%+</li>
+            <li>需求评审自动化分析</li>
+            <li>竞品分析智能报告</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #3b82f6, #6366f1);">咨询方案</a>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-top" style="background: linear-gradient(135deg, #059669, #10b981); min-height: 140px;">
+          <div class="service-icon">🏠</div>
+          <h3>物业AI赋能</h3>
+          <div class="service-sub">PPT制作4小时→20分钟</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-tags">
+            <span class="service-tag">绿城物业</span>
+            <span class="service-tag">实战验证</span>
+          </div>
+          <ul class="service-bullets">
+            <li>PPT快速生成（效率提升12倍）</li>
+            <li>工单分析与智能派单</li>
+            <li>业主服务智能应答</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #059669, #10b981);">咨询方案</a>
+        </div>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-card-top" style="background: linear-gradient(135deg, #ec4899, #f43f5e); min-height: 140px;">
+          <div class="service-icon">🧓</div>
+          <h3>银发AI魔法课堂</h3>
+          <div class="service-sub">公益+商业混合模式</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-tags">
+            <span class="service-tag">10-82岁</span>
+            <span class="service-tag">公益普惠</span>
+          </div>
+          <ul class="service-bullets">
+            <li>用药安全AI咨询（齐阿姨案例）</li>
+            <li>反诈AI识别与预警</li>
+            <li>声音克隆与AI陪伴</li>
+          </ul>
+          <a href="#booking" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">咨询方案</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-accent" id="bootcamp">
+  <div class="container">
+    <div class="section-label fade-in">BOOTCAMP</div>
+    <h2 class="section-title fade-in">AI进阶实操营</h2>
+    <p class="section-subtitle fade-in">3天线上训练营，五阶段工具进阶模型，从豆包到Claude Code</p>
+    <div style="max-width: 720px; margin: 0 auto;">
+      <div class="service-card fade-in" style="border: 2px solid var(--accent);">
+        <div class="service-card-top" style="background: var(--gradient);">
+          <div class="service-icon">🚀</div>
+          <h3>五阶段工具进阶训练营</h3>
+          <div class="service-sub">3天线上 · 小班教学 · 实操为主</div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-price">¥599-999/人 | 企业团购另议</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+            <div>
+              <div style="font-weight:700; color:var(--primary); font-size:0.9em; margin-bottom:8px;">📍 学习路径</div>
+              <ul class="service-bullets">
+                <li>第一阶段：豆包/千问/DeepSeek（考驾照）</li>
+                <li>第二阶段：CodeWork/WorkBody（新手上路）</li>
+                <li>第三阶段：Coder CLI模式（老司机升级）</li>
+                <li>第四阶段：Claude Code（体验新能源）</li>
+                <li>第五阶段：OpenAI Codex（上赛道）</li>
+              </ul>
+            </div>
+            <div>
+              <div style="font-weight:700; color:var(--primary); font-size:0.9em; margin-bottom:8px;">🎁 学员权益</div>
+              <ul class="service-bullets">
+                <li>AI工具安装一对一指导</li>
+                <li>3个实操项目（建站/日报/自动化）</li>
+                <li>加入600+人SuperME社群</li>
+                <li>结营后30天答疑服务</li>
+                <li>优秀学员推荐AI早餐局分享</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#booking" class="btn btn-primary" style="width:100%; text-align:center;">立即报名</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section section-dark" id="results">
   <div class="container">
     <div class="section-label fade-in">RESULTS</div>
@@ -563,28 +693,28 @@ a { color: inherit; text-decoration: none; }
     <p class="section-subtitle fade-in">每一个数字背后，都是真实的实践和可验证的成果</p>
     <div class="data-grid stagger">
       <div class="data-card scale-in">
-        <div class="data-number" data-target="72">0<span class="data-unit">%</span></div>
-        <div class="data-label">培训后行为改变率</div>
+        <div class="data-number" data-target="80">0<span class="data-unit">%</span></div>
+        <div class="data-label">活动报名效率提升</div>
       </div>
       <div class="data-card scale-in">
-        <div class="data-number">10<span class="data-unit">x</span></div>
-        <div class="data-label">学员平均效率提升</div>
+        <div class="data-number" data-target="12">0<span class="data-unit">x</span></div>
+        <div class="data-label">PPT制作效率提升</div>
       </div>
       <div class="data-card scale-in">
         <div class="data-number" data-target="95">0<span class="data-unit">%</span></div>
         <div class="data-label">PRD AI辅助完成率</div>
       </div>
       <div class="data-card scale-in">
-        <div class="data-number" data-target="580">0</div>
-        <div class="data-label">等价人力天产出</div>
+        <div class="data-number" data-target="9000">0<span class="data-unit">+</span></div>
+        <div class="data-label">社群覆盖人数</div>
       </div>
       <div class="data-card scale-in">
-        <div class="data-number" data-target="600">0<span class="data-unit">+</span></div>
-        <div class="data-label">累计赋能人数</div>
+        <div class="data-number" data-target="90">0<span class="data-unit">%</span></div>
+        <div class="data-label">人工错误率降低</div>
       </div>
       <div class="data-card scale-in">
-        <div class="data-number">3<span class="data-unit">个月</span></div>
-        <div class="data-label">认知到融合周期</div>
+        <div class="data-number" data-target="20">0<span class="data-unit">min</span></div>
+        <div class="data-label">PPT生成（原4小时）</div>
       </div>
     </div>
   </div>
@@ -696,6 +826,30 @@ a { color: inherit; text-decoration: none; }
           <span class="case-metric">全年龄段 · AI公益普惠</span>
         </div>
       </div>
+      <div class="case-card fade-in">
+        <div class="case-icon" style="background: linear-gradient(135deg, #059669, #10b981); display:flex; align-items:center; justify-content:center;"><span style="font-size:3em;">🏠</span></div>
+        <div class="case-info">
+          <h4>绿城物业PPT提效</h4>
+          <p>物业经理用AI生成汇报PPT，原需4小时手工制作缩短至20分钟完成</p>
+          <span class="case-metric">效率提升12倍 · 绿城物业专场验证</span>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444); display:flex; align-items:center; justify-content:center;"><span style="font-size:3em;">🛒</span></div>
+        <div class="case-info">
+          <h4>优团活动报名自动化</h4>
+          <p>即时零售商家活动报名从人工逐一匹配到AI自动计算毛利+智能选品+批量报名</p>
+          <span class="case-metric">报名效率提升80% · 错误率降低90%</span>
+        </div>
+      </div>
+      <div class="case-card fade-in">
+        <div class="case-icon" style="background: linear-gradient(135deg, #ec4899, #f43f5e); display:flex; align-items:center; justify-content:center;"><span style="font-size:3em;">💊</span></div>
+        <div class="case-info">
+          <h4>银发用药安全咨询</h4>
+          <p>82岁齐阿姨用AI查询药物相互作用，避免用药风险，开启银发族AI新生活</p>
+          <span class="case-metric">银发魔法课堂 · 公益普惠案例</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -753,7 +907,8 @@ a { color: inherit; text-decoration: none; }
         <span class="bio-badge">457条实践沉淀</span>
         <span class="bio-badge">9种活动形式</span>
         <span class="bio-badge">覆盖10岁到82岁</span>
-        <span class="bio-badge">600+人赋能</span>
+        <span class="bio-badge">9000+社群覆盖</span>
+        <span class="bio-badge">4个行业方案</span>
       </div>
     </div>
   </div>
@@ -786,6 +941,11 @@ a { color: inherit; text-decoration: none; }
             <option value="">请选择</option>
             <option value="workshop">个人实战工作坊 (¥399/人)</option>
             <option value="enterprise">企业认知内训 (¥1.5-5万/场)</option>
+            <option value="bootcamp">AI进阶实操营 (¥599-999/人)</option>
+            <option value="retail">即时零售AI运营方案</option>
+            <option value="pm">产品经理AI协作方案</option>
+            <option value="property">物业AI赋能方案</option>
+            <option value="silver">银发AI魔法课堂</option>
             <option value="consulting">认知转型咨询 (定制方案)</option>
             <option value="case">场景发现工作坊 (体验课)</option>
           </select>
