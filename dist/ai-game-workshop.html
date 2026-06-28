@@ -368,17 +368,17 @@ body{font-family:"Rounded Mplus 1c","Noto Sans SC","PingFang SC","Hiragino Sans 
   var current = 0;
 
   function go(n) {
-    if (n < 0 || n >= total) return;
-    slides[current].classList.remove('active');
-    slides[current].classList.add(n > current ? 'prev' : '');
+    if (n < 0 || n >= total || n === current) return;
+    var prev = current;
+    slides[prev].classList.remove('active');
+    if (n > prev) slides[prev].classList.add('prev');
     current = n;
-    slides[current].classList.remove('prev');
-    slides[current].classList.add('active');
-    document.getElementById('progressBar').style.width = ((current + 1) / total * 100) + '%';
-    document.getElementById('pageNum').textContent = (current + 1) + ' / ' + total;
     for (var i = 0; i < total; i++) {
       if (i !== current) { slides[i].classList.remove('active'); slides[i].classList.remove('prev'); }
     }
+    slides[current].classList.add('active');
+    document.getElementById('progressBar').style.width = ((current + 1) / total * 100) + '%';
+    document.getElementById('pageNum').textContent = (current + 1) + ' / ' + total;
   }
 
   document.addEventListener('keydown', function(e) {
@@ -399,7 +399,9 @@ body{font-family:"Rounded Mplus 1c","Noto Sans SC","PingFang SC","Hiragino Sans 
     if (Math.abs(dx) > 50) { dx < 0 ? go(current + 1) : go(current - 1); }
   });
 
-  go(0);
+  slides[0].classList.add('active');
+  document.getElementById('progressBar').style.width = (1 / total * 100) + '%';
+  document.getElementById('pageNum').textContent = '1 / ' + total;
 })();
 </script>
 </body>
