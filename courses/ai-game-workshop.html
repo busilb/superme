@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#FF6B35">
+    <meta name="description" content="AI小创客——用自然语言做自己的游戏！面向小学3-6年级，90-120分钟工作坊，每个孩子都能用AI把脑海里的游戏变成现实。">
+    <title>AI小创客 · 我的第一个游戏 · SuperME 课程</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: "Inter", "Noto Sans SC", sans-serif; background: #fffbf5; color: #212121; }
+        a { color: #FF6B35; text-decoration: none; }
+        .hero {
+            background: linear-gradient(135deg, #FF6B35 0%, #FFD93D 50%, #6BC5F8 100%);
+            color: white; padding: 60px 20px 80px; text-align: center; position: relative; overflow: hidden;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 40%);
+        }
+        .hero > * { position: relative; z-index: 1; }
+        .hero .breadcrumb { font-size: 0.9em; color: rgba(255,255,255,0.8); margin-bottom: 24px; }
+        .hero .breadcrumb a { color: white; }
+        .hero h1 { font-size: 2.6em; font-weight: 900; margin-bottom: 8px; text-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .hero .hero-emoji { font-size: 2em; margin-bottom: 12px; }
+        .hero h2 { font-size: 1.2em; color: rgba(255,255,255,0.95); font-weight: 400; margin-bottom: 24px; }
+        .hero .meta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .hero .meta span {
+            background: rgba(255,255,255,0.25); backdrop-filter: blur(8px); padding: 6px 16px; border-radius: 20px;
+            font-size: 0.9em; color: white; font-weight: 600;
+        }
+        .container { max-width: 800px; margin: -40px auto 60px; padding: 0 20px; }
+        .card {
+            background: white; border-radius: 18px; padding: 36px; margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid #f0e6d9;
+        }
+        .card h3 { color: #1a1f36; font-size: 1.3em; margin-bottom: 16px; border-left: 4px solid #FF6B35; padding-left: 16px; }
+        .card p { color: #616161; line-height: 1.8; margin-bottom: 12px; }
+        .highlight { background: #fff3e8; border-radius: 14px; padding: 20px 24px; margin: 16px 0; }
+        .highlight p { color: #1a1f36; font-weight: 600; margin: 0; font-size: 1.05em; }
+        .game-types { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+        .game-type {
+            background: #fff8f0; border: 2px solid #ffe4cc; border-radius: 14px; padding: 16px;
+            text-align: center; transition: all 0.2s;
+        }
+        .game-type:hover { border-color: #FF6B35; transform: translateY(-2px); }
+        .game-type .icon { font-size: 2em; margin-bottom: 8px; }
+        .game-type h4 { font-size: 0.95em; color: #1a1f36; margin-bottom: 4px; }
+        .game-type p { font-size: 0.82em; color: #757575; margin: 0; }
+        .outline-item {
+            display: flex; gap: 16px; padding: 16px 0;
+            border-bottom: 1px solid #f0e6d9; align-items: flex-start;
+        }
+        .outline-item:last-child { border-bottom: none; }
+        .outline-time {
+            background: linear-gradient(135deg, #FF6B35, #FFD93D); color: white; padding: 4px 12px;
+            border-radius: 10px; font-size: 0.85em; font-weight: 700;
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .outline-content h4 { color: #1a1f36; margin-bottom: 4px; }
+        .outline-content p { font-size: 0.9em; color: #757575; margin: 0; }
+        .learn-list { list-style: none; }
+        .learn-list li { padding: 8px 0; padding-left: 28px; position: relative; color: #424242; line-height: 1.6; }
+        .learn-list li::before { content: "\2713"; position: absolute; left: 0; color: #FF6B35; font-weight: 700; }
+        .skill-path { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+        .skill-step {
+            display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+            background: #fff8f0; border-left: 3px solid #FFD93D;
+        }
+        .skill-step:nth-child(2) { border-left-color: #FFA94D; }
+        .skill-step:nth-child(3) { border-left-color: #FF6B35; }
+        .skill-step:nth-child(4) { border-left-color: #e85d26; }
+        .skill-step .step-num {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: #FF6B35; color: white; font-size: 0.8em; font-weight: 700;
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .skill-step .step-text { font-size: 0.9em; color: #424242; }
+        .skill-step .step-text strong { color: #1a1f36; }
+        .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+        .audience-yes, .audience-no { padding: 16px; border-radius: 14px; }
+        .audience-yes { background: #e8f5e9; }
+        .audience-no { background: #fce4ec; }
+        .audience-yes h4 { color: #2e7d32; margin-bottom: 8px; }
+        .audience-no h4 { color: #c62828; margin-bottom: 8px; }
+        .audience-yes li, .audience-no li { font-size: 0.9em; margin-bottom: 4px; color: #424242; }
+        .price-box {
+            background: linear-gradient(135deg, #FF6B35, #FFD93D); color: white;
+            border-radius: 18px; padding: 36px; text-align: center; margin-bottom: 24px;
+            position: relative; overflow: hidden;
+        }
+        .price-box::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
+        }
+        .price-box > * { position: relative; z-index: 1; }
+        .price-box h3 { color: white; border: none; padding: 0; margin-bottom: 8px; font-size: 1.3em; }
+        .price-row { display: flex; gap: 24px; justify-content: center; margin: 24px 0; flex-wrap: wrap; }
+        .price-item { text-align: center; }
+        .price-item .label { font-size: 0.85em; color: rgba(255,255,255,0.85); }
+        .price-item .amount { font-size: 2em; font-weight: 900; color: white; }
+        .price-item .unit { font-size: 0.8em; color: rgba(255,255,255,0.8); }
+        .cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 24px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+            border-radius: 10px; font-size: 1em; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .btn-primary { background: white; color: #FF6B35; }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
+        .btn-secondary { background: rgba(255,255,255,0.25); color: white; }
+        .btn-secondary:hover { background: rgba(255,255,255,0.35); }
+        blockquote {
+            border-left: 4px solid #FF6B35; background: #fff3e8; padding: 16px 20px;
+            margin: 16px 0; border-radius: 0 10px 10px 0; font-style: italic; color: #1a1f36;
+        }
+        .faq-item { border-bottom: 1px solid #f0e6d9; padding: 16px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-item h4 { color: #FF6B35; margin-bottom: 6px; font-size: 0.95em; }
+        .faq-item p { color: #616161; font-size: 0.9em; margin: 0; line-height: 1.7; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin: 20px; color: #1a1f36; font-weight: 500; }
+        .footer { text-align: center; padding: 40px 20px; color: #9e9e9e; font-size: 0.9em; }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2em; }
+            .card { padding: 24px; }
+            .game-types, .audience-grid { grid-template-columns: 1fr; }
+            .price-row { flex-direction: column; gap: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="breadcrumb"><a href="../index.html">SuperME — AI认知赋能</a> / 课程详情</div>
+    <div class="hero-emoji">🎮✨🚀</div>
+    <h1>AI 小创客</h1>
+    <h2>用魔法语言，做自己的游戏！</h2>
+    <div class="meta">
+        <span>90-120分钟</span>
+        <span>小学3-6年级</span>
+        <span>Vibe Coding</span>
+        <span>零编码基础</span>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h3>课程承诺</h3>
+        <div class="highlight">
+            <p>120分钟内，每个孩子都能用自然语言做出一个可以分享给爸妈玩的游戏。</p>
+        </div>
+        <p>这不是一堂教编程语法的课。孩子只需要"说话"——用自然语言告诉 AI "我想要一个养猫游戏"，AI 就会把它变成现实。我们叫它 <strong>Vibe Coding</strong>（氛围编程）：不写代码，用想象力创造。</p>
+        <blockquote>"每个孩子心里都有一个游戏，现在他们终于能把它做出来了。"</blockquote>
+    </div>
+
+    <div class="card">
+        <h3>选择你的游戏类型</h3>
+        <p>每个孩子根据自己的兴趣，选择一种游戏来创造：</p>
+        <div class="game-types">
+            <div class="game-type">
+                <div class="icon">📖</div>
+                <h4>互动故事</h4>
+                <p>写一个有多个结局的冒险故事</p>
+            </div>
+            <div class="game-type">
+                <div class="icon">🐱</div>
+                <h4>宠物养成</h4>
+                <p>养一只属于你的小动物</p>
+            </div>
+            <div class="game-type">
+                <div class="icon">🧠</div>
+                <h4>答题闯关</h4>
+                <p>出题考倒你的同学</p>
+            </div>
+            <div class="game-type">
+                <div class="icon">🔨</div>
+                <h4>打地鼠</h4>
+                <p>比比谁的手速快</p>
+            </div>
+            <div class="game-type">
+                <div class="icon">⚔️</div>
+                <h4>回合对战</h4>
+                <p>设计你的英雄和技能</p>
+            </div>
+            <div class="game-type">
+                <div class="icon">🎨</div>
+                <h4>自由创造</h4>
+                <p>你说了算！任何想法都可以</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>孩子能学到什么</h3>
+        <ul class="learn-list">
+            <li>游戏设计思维：学会拆解游戏的三要素——角色、规则、目标</li>
+            <li>AI 沟通能力：学会用清晰的语言描述需求，让 AI 准确执行</li>
+            <li>迭代思维：做出来 → 试玩 → 发现问题 → 改进，体验真实的产品开发过程</li>
+            <li>创造力表达：把脑海里的想法变成可交互的真实作品</li>
+            <li>展示与分享：上台演示自己的作品，锻炼表达能力</li>
+            <li>成就感：带走一个可以分享给朋友和家人的在线游戏</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h3>AI 提示词进阶路径</h3>
+        <p>整堂课的隐藏主线——教会孩子越来越好地跟 AI 沟通：</p>
+        <div class="skill-path">
+            <div class="skill-step">
+                <div class="step-num">1</div>
+                <div class="step-text"><strong>说出来</strong> — "帮我做一个养猫游戏"</div>
+            </div>
+            <div class="skill-step">
+                <div class="step-num">2</div>
+                <div class="step-text"><strong>说具体</strong> — "有喂食按钮，猫饿了会哭，喂多了会变胖"</div>
+            </div>
+            <div class="skill-step">
+                <div class="step-num">3</div>
+                <div class="step-text"><strong>说问题</strong> — "点按钮没反应，数字应该加10但没变"</div>
+            </div>
+            <div class="skill-step">
+                <div class="step-num">4</div>
+                <div class="step-text"><strong>说参考</strong> — "像XX游戏那样，打败怪物会掉金币"</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>课程大纲（90-120分钟）</h3>
+        <div class="outline-item">
+            <span class="outline-time">10min</span>
+            <div class="outline-content">
+                <h4>开场破冰：你最喜欢什么游戏？</h4>
+                <p>举手互动，拆解一个游戏的"三个秘密"：角色、规则、目标。</p>
+            </div>
+        </div>
+        <div class="outline-item">
+            <span class="outline-time">10min</span>
+            <div class="outline-content">
+                <h4>AI 魔法时刻</h4>
+                <p>老师现场演示：一句话让 AI 做出一个打地鼠游戏。全班喊需求现场改："地鼠换成皮卡丘！""加音效！"</p>
+            </div>
+        </div>
+        <div class="outline-item">
+            <span class="outline-time">15min</span>
+            <div class="outline-content">
+                <h4>设计我的游戏</h4>
+                <p>选择游戏类型，在纸上画草图。三个必答题：主角是谁？怎么玩？怎么算赢？写出"给 AI 的第一句话"。</p>
+            </div>
+        </div>
+        <div class="outline-item">
+            <span class="outline-time">30min</span>
+            <div class="outline-content">
+                <h4>Vibe Coding 实战</h4>
+                <p>三轮迭代：第一轮发出指令拿到游戏 → 第二轮试玩并提改进需求 → 第三轮完成挑战任务（加新功能/音效/多结局）。</p>
+            </div>
+        </div>
+        <div class="outline-item">
+            <span class="outline-time">15min</span>
+            <div class="outline-content">
+                <h4>作品打磨</h4>
+                <p>用 AI 换配色、生成插图、加动画。部署上线，生成二维码。</p>
+            </div>
+        </div>
+        <div class="outline-item">
+            <span class="outline-time">15min</span>
+            <div class="outline-content">
+                <h4>游戏发布会</h4>
+                <p>3-5位同学上台展示，分享设计理念和 AI 协作过程。全班试玩投票，评选最佳创意、最佳美术、最好玩三个奖项。</p>
+            </div>
+        </div>
+        <div class="outline-item">
+            <span class="outline-time">5min</span>
+            <div class="outline-content">
+                <h4>总结：你获得了超能力！</h4>
+                <p>三枚成就徽章：游戏设计师 + AI沟通师 + 小创客。课后任务：回家给游戏加一个新功能。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>适合谁</h3>
+        <div class="audience-grid">
+            <div class="audience-yes">
+                <h4>适合参加</h4>
+                <ul>
+                    <li>小学 3-6 年级（8-12 岁）</li>
+                    <li>对游戏感兴趣、有创造欲的孩子</li>
+                    <li>零编程基础，完全没问题</li>
+                    <li>会打字就行（拼音输入即可）</li>
+                    <li>家长想让孩子从"玩游戏"变成"做游戏"</li>
+                </ul>
+            </div>
+            <div class="audience-no">
+                <h4>不太适合</h4>
+                <ul>
+                    <li>低于 3 年级（抽象思维尚未发展）</li>
+                    <li>期望系统学习 Python/JS 语法</li>
+                    <li>无法独立使用键盘输入的孩子</li>
+                    <li>对游戏完全无兴趣的孩子</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="price-box">
+        <h3>课程定价</h3>
+        <p style="color: rgba(255,255,255,0.9);">线下工作坊（推荐）· 每班 15-30 人</p>
+        <div class="price-row">
+            <div class="price-item">
+                <div class="label">个人报名</div>
+                <div class="amount">¥299-499</div>
+                <div class="unit">/人</div>
+            </div>
+            <div class="price-item">
+                <div class="label">学校/机构团购</div>
+                <div class="amount">¥5,000-12,000</div>
+                <div class="unit">/场</div>
+            </div>
+            <div class="price-item">
+                <div class="label">亲子场（家长同行）</div>
+                <div class="amount">¥399</div>
+                <div class="unit">/组</div>
+            </div>
+        </div>
+        <p style="color: rgba(255,255,255,0.85); font-size: 0.9em; margin-bottom: 16px;">含教学设备使用 · AI 账号 · 作品部署 · 结课证书</p>
+        <div class="cta-row">
+            <a href="../index.html#booking" class="btn btn-primary">立即咨询报名</a>
+            <a href="../index.html#booking" class="btn btn-secondary">学校合作咨询</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>家长常见问题</h3>
+        <div class="faq-item">
+            <h4>Q: 孩子完全不会编程，能跟上吗？</h4>
+            <p>完全可以。整堂课用自然语言（中文）跟 AI 对话，不需要写任何代码。会打字就能参加。</p>
+        </div>
+        <div class="faq-item">
+            <h4>Q: Vibe Coding 是什么？</h4>
+            <p>Vibe Coding（氛围编程）是 2025 年最新的编程方式——用自然语言描述你想要什么，AI 自动生成代码。孩子学会的不是某种编程语言，而是"如何清晰表达需求"这项未来最重要的能力。</p>
+        </div>
+        <div class="faq-item">
+            <h4>Q: 课后孩子还能继续做游戏吗？</h4>
+            <p>可以。课后我们会提供 AI 工具的使用指南，孩子在家可以继续跟 AI 对话，给游戏加新功能。作品会部署在线上，随时可以分享。</p>
+        </div>
+        <div class="faq-item">
+            <h4>Q: 跟市面上的 Scratch 编程课有什么区别？</h4>
+            <p>Scratch 教的是拖拽积木的操作方式，我们教的是"跟 AI 合作解决问题"的思维方式。孩子做出的是真正的网页游戏，可以发链接、扫二维码直接玩，不需要安装任何软件。</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>讲师介绍</h3>
+        <p><strong>布斯（李斌）</strong>，SuperME 创始人，阿里巴巴 13 年老兵。零编码经验，用 AI 做出完整网站、游戏、数据工具等 10+ 个产品。他的课程覆盖 10 岁到 82 岁，相信"想法是最值钱的，实现已经平权"。</p>
+        <blockquote>"每个人心里都有一个游戏，我只是帮他们找到了'说出来'的方式。"</blockquote>
+    </div>
+
+</div>
+
+<a href="../index.html" class="back-link">&larr; 返回首页</a>
+
+<div class="footer">
+    <p>SuperME — AI认知赋能 &copy; 2026</p>
+</div>
+
+</body>
+</html>
