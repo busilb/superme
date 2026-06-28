@@ -1099,17 +1099,18 @@ function submitForm() {
 (function() {
   var form = document.getElementById('bookingForm');
   if (!form) return;
+  var NOTIFY_URL = 'https://cdfc69-sandbox-session672ff57ced9240ee9c-9100.agent.alibaba-inc.com/api/notify';
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     var btn = document.getElementById('submitBtn');
     btn.textContent = '提交中...';
     btn.disabled = true;
-    fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    }).then(function(res) {
-      if (res.ok) {
+    var fd = new FormData(form);
+    var data = { name: fd.get('姓名'), phone: fd.get('手机号'), company: fd.get('公司团队'), service: fd.get('感兴趣的服务'), message: fd.get('需求描述') };
+    var emailReq = fetch(form.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+    var dingReq = fetch(NOTIFY_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) }).catch(function() {});
+    Promise.all([emailReq, dingReq]).then(function(results) {
+      if (results[0] && results[0].ok) {
         form.style.display = 'none';
         document.getElementById('formSuccess').style.display = 'block';
       } else {
